@@ -1,0 +1,5 @@
+D:\signalRChat
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=signalr-aspnetcore
+--content-root=D:\signalRChat
+--file=

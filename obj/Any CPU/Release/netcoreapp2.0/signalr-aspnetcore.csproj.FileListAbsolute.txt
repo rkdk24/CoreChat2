@@ -1,0 +1,11 @@
+D:\signalRChat\bin\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.deps.json
+D:\signalRChat\bin\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.runtimeconfig.json
+D:\signalRChat\bin\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.runtimeconfig.dev.json
+D:\signalRChat\bin\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.dll
+D:\signalRChat\bin\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.pdb
+D:\signalRChat\obj\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.csproj.CoreCompileInputs.cache
+D:\signalRChat\obj\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.AssemblyInfoInputs.cache
+D:\signalRChat\obj\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.AssemblyInfo.cs
+D:\signalRChat\obj\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.dll
+D:\signalRChat\obj\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.pdb
+D:\signalRChat\obj\Any CPU\Release\netcoreapp2.0\signalr-aspnetcore.csprojResolveAssemblyReference.cache
