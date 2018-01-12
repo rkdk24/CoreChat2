@@ -25,7 +25,7 @@ namespace signalr_aspnetcore
         public static IWebHost BuildWebHost(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
-        .UseUrls("http://ancient-shelf-70200.herokuapp.com")
+        .UseUrls("http://ancient-shelf-70200.herokuapp.com:57597")
         .UseIISIntegration()
         //.UseKestrel(options =>
         //{
