@@ -15,7 +15,7 @@
 
     <script type="text/javascript">
         var transport = signalR.TransportType.WebSockets;
-        var connection = new signalR.HubConnection(`https://${document.location.host}/chat`, { transport: transport });
+        var connection = new signalR.HubConnection(`http://${document.location.host}/chat`, { transport: transport });
 
         var messageInput = document.getElementById('message');
         var name = prompt('Enter your name:', '');
