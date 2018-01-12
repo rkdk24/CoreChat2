@@ -15,7 +15,7 @@ namespace signalr_aspnetcore
     {
         public static void Main(string[] args)
         {
-            var url = $"http://*:{Environment.GetEnvironmentVariable("57597")}/";
+            var url = $"http://*:{Environment.GetEnvironmentVariable("22206")}/";
  
             Console.WriteLine($"Using Url: {url}");
 
