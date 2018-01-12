@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,10 +17,10 @@ namespace signalr_aspnetcore
     {
         public static void Main(string[] args)
         {
-            var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
+            var url = $"https://*:{Environment.GetEnvironmentVariable("PORT")}/";
             //Console.WriteLine(request.isSecure());
             Console.WriteLine($"Using Url: {url}");
-
+            
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
