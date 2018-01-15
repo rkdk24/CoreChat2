@@ -19,8 +19,12 @@ namespace signalr_aspnetcore
         {
             var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
             //Console.WriteLine(request.isSecure());
-            Console.WriteLine($"Using Url: {url}");
-            
+            //Console.WriteLine($"Using Url: {url}");
+#if DEBUG
+            Console.WriteLine("Debug");
+            BuildWebHost(args).Run();
+#else
+            Console.WriteLine("Releae");
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -30,24 +34,15 @@ namespace signalr_aspnetcore
                 .Build();
 
             host.Run();
-            //BuildWebHost(args).Run();
+#endif
+
         }
-
-        //public static IWebHost BuildWebHost(string[] args) =>
-        //    WebHost.CreateDefaultBuilder(args)
-        //        .UseStartup<Startup>()
-        //        .Build();
-    //    public static IWebHost BuildWebHost(string[] args) =>
-    //WebHost.CreateDefaultBuilder(args)
-    //    .UseStartup<Startup>()
-    //    .UseUrls("http://ancient-shelf-70200.herokuapp.com:57597")
-    //    .UseIISIntegration()
-    //    //.UseKestrel(options =>
-    //    //{
-    //    //    options.Listen(IPAddress.Loopback, 5000);
-
-    //    //}
-    //    .UseKestrel()
-    //    .Build();
+        public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseUrls("http://localhost:50987")
+        .UseIISIntegration()
+        .UseKestrel()
+        .Build();
     }
 }
