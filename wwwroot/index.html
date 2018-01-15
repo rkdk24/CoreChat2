@@ -15,24 +15,24 @@
     </div>
     <script type="text/javascript" src="signalr-client-1.0.0-alpha2-final.js"></script>
 
-    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
 
 
     <script type="text/javascript">
         var transport = signalR.TransportType.WebSockets;
-        //var connection = new signalR.HubConnection(`http://${document.location.host}/chat`, { transport: transport });
-        var connection = new signalR.HubConnection(`http://${document.location.host}/chat`);
+        var connection = new signalR.HubConnection(`http://${document.location.host}/chat`, { transport: transport });
+        
         var messageInput = document.getElementById('message');
         var name = prompt('Enter your name:', '');
         var button = document.getElementById("sendMessage");
 
-        //$("#message").keyup(function (e) {
-        //    if (e.keyCode == 13) {
-        //        if (checkName())
-        //            messageSend();
-        //    }
-        //});
+        $("#message").keyup(function (e) {
+            if (e.keyCode == 13) {
+                if (checkName())
+                    messageSend();
+            }
+        });
 
         connection.on('broadcastMessage', (name, message) => {
             var liElement = document.createElement('li');
