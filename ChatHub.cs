@@ -7,7 +7,8 @@ namespace signalr_aspnetcore
     {
         public override Task OnConnectedAsync()
         {
-            Clients.All.InvokeAsync("broadcastMessage", "system", $"{Context.ConnectionId} joined the conversation");
+            
+            Clients.All.InvokeAsync("broadcastMessage", "system", $"{Context.User} joined the conversation");
             return base.OnConnectedAsync();
         }
         public void Send(string name, string message)

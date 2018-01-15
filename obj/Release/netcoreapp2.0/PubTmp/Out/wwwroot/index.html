@@ -12,6 +12,7 @@
         <ul id="discussion"></ul>
     </div>
     <script type="text/javascript" src="signalr-client-1.0.0-alpha2-final.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
     <script type="text/javascript">
         var transport = signalR.TransportType.WebSockets;
@@ -21,6 +22,11 @@
         var name = prompt('Enter your name:', '');
         var button = document.getElementById("sendMessage");
 
+        $("#message").keyup(function (e) {
+            if (e.keyCode == 13)
+                messageSend();
+        });
+
         connection.on('broadcastMessage', (name, message) => {
             var liElement = document.createElement('li');
             liElement.innerHTML = '<strong>' + name + '</strong>:&nbsp;&nbsp;' + message;
@@ -28,12 +34,16 @@
         });
 
         button.addEventListener("click", event => {
-            connection.invoke('send', name, messageInput.value);
-            messageInput.value = '';
-            messageInput.focus();
+            messageSend();
         });
 
         connection.start();
+
+        function messageSend() {
+            connection.invoke('send', name, messageInput.value);
+            messageInput.value = '';
+            messageInput.focus();
+        }
     </script>
 </body>
 
