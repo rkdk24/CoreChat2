@@ -18,12 +18,12 @@ namespace signalr_aspnetcore
         public static void Main(string[] args)
         {
             var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
-            //Console.WriteLine(request.isSecure());
-            //Console.WriteLine($"Using Url: {url}");
-#if DEBUG
-            Console.WriteLine("Debug");
-            BuildWebHost(args).Run();
-#else
+
+            Console.WriteLine($"Using Url: {url}");
+//#if DEBUG
+            //Console.WriteLine("Debug");
+            //BuildWebHost(args).Run();
+//#else
             Console.WriteLine("Releae");
             var host = new WebHostBuilder()
                 .UseKestrel()
@@ -34,15 +34,15 @@ namespace signalr_aspnetcore
                 .Build();
 
             host.Run();
-#endif
+//#endif
 
         }
-        public static IWebHost BuildWebHost(string[] args) =>
-    WebHost.CreateDefaultBuilder(args)
-        .UseStartup<Startup>()
-        .UseUrls("http://localhost:9999")
-        .UseIISIntegration()
-        .UseKestrel()
-        .Build();
+    //    public static IWebHost BuildWebHost(string[] args) =>
+    //WebHost.CreateDefaultBuilder(args)
+    //    .UseStartup<Startup>()
+    //    .UseUrls("http://localhost:9999")
+    //    .UseIISIntegration()
+    //    .UseKestrel()
+    //    .Build();
     }
 }
