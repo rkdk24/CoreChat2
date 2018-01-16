@@ -20,10 +20,10 @@ namespace signalr_aspnetcore
             var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
 
             Console.WriteLine($"Using Url: {url}");
-//#if DEBUG
+#if DEBUG
             //Console.WriteLine("Debug");
-            //BuildWebHost(args).Run();
-//#else
+            BuildWebHost(args).Run();
+#else
             Console.WriteLine("Releae");
             var host = new WebHostBuilder()
                 .UseKestrel()
@@ -34,15 +34,15 @@ namespace signalr_aspnetcore
                 .Build();
 
             host.Run();
-//#endif
+#endif
 
         }
-    //    public static IWebHost BuildWebHost(string[] args) =>
-    //WebHost.CreateDefaultBuilder(args)
-    //    .UseStartup<Startup>()
-    //    .UseUrls("http://localhost:9999")
-    //    .UseIISIntegration()
-    //    .UseKestrel()
-    //    .Build();
+        public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        .UseStartup<Startup>()
+        .UseUrls("http://localhost:9999")
+        .UseIISIntegration()
+        .UseKestrel()
+        .Build();
     }
 }
