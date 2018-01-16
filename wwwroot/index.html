@@ -15,13 +15,13 @@
     </div>
     <script type="text/javascript" src="signalr-client-1.0.0-alpha2-final.js"></script>
 
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 
 
 
     <script type="text/javascript">
         var transport = signalR.TransportType.WebSockets;
-        var connection = new signalR.HubConnection(`https://${document.location.host}/chat`, { transport: transport });
+        var connection = new signalR.HubConnection(`http://${document.location.host}/chat`, { transport: transport });
         console.log()
         var messageInput = document.getElementById('message');
         var name = prompt('Enter your name:', '');
