@@ -37,6 +37,7 @@ namespace signalr_aspnetcore
 #endif
 
         }
+#if DEBUG
         public static IWebHost BuildWebHost(string[] args) =>
     WebHost.CreateDefaultBuilder(args)
         .UseStartup<Startup>()
@@ -44,5 +45,6 @@ namespace signalr_aspnetcore
         .UseIISIntegration()
         .UseKestrel()
         .Build();
+#endif
     }
 }
