@@ -33,7 +33,6 @@ namespace signalr_aspnetcore
             {
                 routes.MapHub<ChatHub>("chat");
             });
-
      
         }
     }
