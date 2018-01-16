@@ -10,7 +10,7 @@ namespace signalr_aspnetcore
         {
             Console.WriteLine("OnConnectedAsync");
 
-            Clients.All.InvokeAsync("broadcastMessage", "system", $"{Context.User.Identity.Name} joined the conversation");
+            Clients.All.InvokeAsync("broadcastMessage", "system", $"{Context.ConnectionId} joined the conversation");
             return base.OnConnectedAsync();
         }
         public void Send(string name, string message)
