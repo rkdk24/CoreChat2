@@ -22,7 +22,7 @@
     <script type="text/javascript">
         var transport = signalR.TransportType.WebSockets;
         var connection = new signalR.HubConnection(`http://${document.location.host}/chat`, { transport: transport });
-        console.log()
+        
         var messageInput = document.getElementById('message');
         var name = prompt('Enter your name:', '');
         var button = document.getElementById("sendMessage");
